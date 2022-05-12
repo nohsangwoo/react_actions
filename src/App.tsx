@@ -1,8 +1,31 @@
-import React from 'react';
+import { useState } from 'react';
 import logo from './logo.svg';
+import styled from 'styled-components';
 import './App.css';
 
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const BTN = styled.div`
+  color: black;
+  background-color: #f5f5f5;
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    background-color: #e6e6e6;
+  }
+`;
+
 function App() {
+  const [state, setState] = useState<number>(0);
   return (
     <div className="App">
       <header className="App-header">
@@ -10,14 +33,12 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React hahaasdf
-        </a>
+
+        <div>{state}</div>
+        <Container>
+          <BTN onClick={() => setState(state + 1)}>+</BTN>
+          <BTN onClick={() => setState(state - 1)}>-</BTN>
+        </Container>
       </header>
     </div>
   );
