@@ -27,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div>asdf</div>
         <div>{state}</div>
         <Container>
           <BTN onClick={() => setState(state + 1)}>+</BTN>
