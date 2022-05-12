@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import logo from './logo.svg';
 import styled from 'styled-components';
-import './App.css';
 
 const Container = styled.div`
   display: flex;
@@ -29,11 +27,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-
         <div>{state}</div>
         <Container>
           <BTN onClick={() => setState(state + 1)}>+</BTN>
